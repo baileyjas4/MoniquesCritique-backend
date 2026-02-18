@@ -48,13 +48,13 @@ const placeSchema = new mongoose.Schema({
     trim: true
   },
   priceRange: {
-    type: String,
-    enum: {
-      values: ['$', '$$', '$$$', ''],
-      message: '{VALUE} is not a valid price range'
+      type: String,
+      enum: {
+        values: ['', '$', '$$', '$$$', '$$$$'],
+        message: '{VALUE} is not a valid price range'
+      },
+      default: ''
     },
-    default: ''
-  },
   averageRating: {
     type: Number,
     default: 0,
